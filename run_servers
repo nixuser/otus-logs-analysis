@@ -1,0 +1,7 @@
+# nginx
+# https://github.com/nginxinc/docker-nginx/blob/8921999083def7ba43a06fabd5f80e4406651353/mainline/jessie/Dockerfile#L21-L23
+docker run -it --rm -d -p 8080:80 --name web_nginx nginx
+
+# apache
+# https://github.com/docker-library/httpd/blob/b13054c7de5c74bbaa6d595dbe38969e6d4f860c/2.2/Dockerfile#L72-L75
+docker run -it --rm -d -p 8081:80 --name web_httpd httpd
