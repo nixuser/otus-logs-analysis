@@ -23,8 +23,9 @@ with open(args.file) as file:
         ip_match = re.search(r"\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}", line)
         if ip_match is not None:
             ip = ip_match.group()
-            method = re.search(r"\] \"(POST|GET|PUT|DELETE|HEAD)", line).groups()[0]
-            dict_ip[ip][method] += 1
-            idx += 1
+            method = re.search(r"\] \"(POST|GET|PUT|DELETE|HEAD)", line)
+            if method is not None:
+                dict_ip[ip][method.groups()[0]] += 1
+                idx += 1
 
 print(json.dumps(dict_ip, indent=4))
