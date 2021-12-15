@@ -25,7 +25,7 @@ with open(args.file) as file:
             ip = ip_match.group()
             method = re.search(r"\] \"(POST|GET|PUT|DELETE|HEAD)", line)
             if method is not None:
-                dict_ip[ip][method.groups()[0]] += 1
+                dict_ip[ip][method.group(1)] += 1
                 idx += 1
 
 print(json.dumps(dict_ip, indent=4))
